@@ -1,0 +1,762 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PCKSystem.View.PictureView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Gotowe" Command="{Binding GoBackCommand}"/>
+            <RelativeLayout>
+                <Image Source="Resources/drawable/man.png"
+                   AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                   AbsoluteLayout.LayoutFlags="All"
+                   VerticalOptions="StartAndExpand"
+                   x:Name="image"/>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding FrontRightShoulderSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.104}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.195}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding FrontLeftShoulderSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.344}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.195}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding FrontRightElbowSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.073}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.355}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding FrontLeftElbowSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.376}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.355}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding FrontRightWristSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.04}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.5}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding FrontLeftWristSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.41}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.5}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding FrontRightHipSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.164}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.47}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding FrontLeftHipSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.285}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.47}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding FrontRightKneeSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.164}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.69}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding FrontLeftKneeSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.285}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.69}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding FrontRightFootSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.135}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.855}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding FrontLeftFootSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.31}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.855}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding BackRightShoulderSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.58}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.195}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding BackLeftShoulderSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.82}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.195}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding BackRightElbowSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.549}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.355}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding BackLeftElbowSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.85}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.355}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding BackRightWristSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.515}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.5}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding BackLeftWristSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.88}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.5}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding BackRightHipSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.639}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.47}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding BackLeftHipSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.761}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.47}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding BackRightKneeSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.640}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.69}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding BackLeftKneeSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.761}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.69}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding BackRightFootSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.611}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.855}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Picker SelectedItem="{Binding SelectedItem}"
+                        SelectedIndex="{Binding BackLeftFootSelectedIndex}"
+                    RelativeLayout.XConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Width,
+                        Factor=0.786}"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=image,
+                        Property=Height,
+                        Factor=0.855}"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    FontSize="15"
+                    Opacity="50">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>O - złamanie otwarte</x:String>
+                            <x:String>Z - złamanie zamknięte</x:String>
+                            <x:String>W - zwichnięcie</x:String>
+                            <x:String>S - stłuczenie</x:String>
+                            <x:String>R - rana</x:String>
+                            <x:String>K - krwotok z rany</x:String>
+                            <x:String>M - zmiażdżenie</x:String>
+                            <x:String>A - amputacja</x:String>
+                            <x:String>N - ból nieurazowy</x:String>
+                            <x:String>P - oparzenie</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </RelativeLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

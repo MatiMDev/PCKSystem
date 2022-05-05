@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:converter="clr-namespace:PCKSystem.Converter"
+             x:Class="PCKSystem.View.AddCardView">
+
+
+    <ContentPage.Resources>
+        <converter:NegationBoolConverter x:Key="NegationBoolConverter"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Button Text="Zapisz kartę" BackgroundColor="Red" CornerRadius="25"/>
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Resources/drawable/arrow.png" Rotation="{Binding Rotation}"/>
+                        <Label Text="Informacje o poszkodowanym"
+                               FontAttributes="Bold"
+                               FontSize="Medium" />
+                    </StackLayout>
+                </xct:Expander.Header>
+                <StackLayout Padding="10, 0, 0, 0">
+                    <TableView Intent="Settings">
+                        <TableRoot>
+                            <TableSection>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" Spacing="0">
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" Margin="15, 0, 0, 0" Spacing="15">
+                                            <Label Text="Płeć:"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                                <Label Text="M"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" Margin="0, 0, 10, 0">
+                                                <CheckBox VerticalOptions="Center" HorizontalOptions="Center" IsChecked="{Binding IsMale}">
+                                                    <CheckBox.Behaviors>
+                                                        <xct:EventToCommandBehavior
+                                                            EventName="CheckedChanged"
+                                                            Command="{Binding CheckedChangedCommand}"/>
+                                                    </CheckBox.Behaviors>
+
+                                                </CheckBox>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                                <Label Text="K"/>
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                                <CheckBox VerticalOptions="Center" HorizontalOptions="Center" IsChecked="{Binding IsMale, Converter={StaticResource NegationBoolConverter}}">
+                                                    <CheckBox.Behaviors>
+                                                        <xct:EventToCommandBehavior
+                                                            EventName="CheckedChanged"
+                                                            Command="{Binding CheckedChangedReversedCommand}"/>
+                                                    </CheckBox.Behaviors>
+                                                </CheckBox>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                                <EntryCell Label="Wiek:" Text="{Binding Age}"/>
+                                <EntryCell Label="Nazwisko:" Text="{Binding Surname}"/>
+                                <EntryCell Label="Imię:" Text="{Binding Name}"/>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                        <StackLayout VerticalOptions="CenterAndExpand" Margin="15, 0, 0, 0">
+                                            <Label Text="Data urodzenia:"/>
+                                        </StackLayout>
+                                        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                            <DatePicker/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                                <EntryCell Label="Uwagi:"/>
+                                <SwitchCell Text="Nie wyrażam zgody na udzielenie pomocy"/>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                </StackLayout>
+            </xct:Expander>
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Resources/drawable/arrow.png" Rotation="{Binding Rotation}"/>
+                        <Label Text="Układ oddechowy"
+                               FontAttributes="Bold"
+                               FontSize="Medium" />
+                    </StackLayout>
+                </xct:Expander.Header>
+                <StackLayout>
+                    <TableView>
+                        <TableRoot>
+                            <TableSection>
+                                <EntryCell Label="Częstość oddechow na minutę:"/>
+                                <SwitchCell Text="Duszność"/>
+                                <SwitchCell Text="Sinica"/>
+                                <SwitchCell Text="Bezdech"/>
+                                <EntryCell Label="Saturacja (w %):"/>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                </StackLayout>
+            </xct:Expander>
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Resources/drawable/arrow.png" Rotation="{Binding Rotation}"/>
+                        <Label Text="Układ krążenia"
+                               FontAttributes="Bold"
+                               FontSize="Medium" />
+                    </StackLayout>
+                </xct:Expander.Header>
+                <StackLayout>
+                    <TableView>
+                        <TableRoot>
+                            <TableSection>
+                                <EntryCell Label="Tętno (na minutę):"/>
+                                <SwitchCell Text="Ob. centralnie"/>
+                                <SwitchCell Text="Ob. obwodowo"/>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Ciśnienie tętnicze" VerticalOptions="CenterAndExpand" Margin="15, 0, 0, 0"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Entry VerticalOptions="CenterAndExpand" WidthRequest="55" HorizontalTextAlignment="Center"/>
+                                            <Label Text="/" VerticalOptions="CenterAndExpand"/>
+                                            <Entry VerticalOptions="CenterAndExpand" WidthRequest="55" HorizontalTextAlignment="Center"/>
+                                            <Label Text="mmHG" VerticalOptions="CenterAndExpand"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                </StackLayout>
+            </xct:Expander>
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Resources/drawable/arrow.png" Rotation="{Binding Rotation}"/>
+                        <Label Text="Objawy"
+                               FontAttributes="Bold"
+                               FontSize="Medium" />
+                    </StackLayout>
+                </xct:Expander.Header>
+                <StackLayout>
+                    <TableView>
+                        <TableRoot>
+                            <TableSection>
+                                <SwitchCell Text="Wstrząs"/>
+                                <SwitchCell Text="NZK"/>
+                                <SwitchCell Text="Obj. Oponowe"/>
+                                <SwitchCell Text="Drgawki"/>
+                                <SwitchCell Text="Afazja"/>
+                                <SwitchCell Text="Wymioty"/>
+                                <SwitchCell Text="Biegunka"/>
+                                <SwitchCell Text="Krwawienie"/>
+                                <SwitchCell Text="Obrzęki"/>
+                                <SwitchCell Text="Zasłabnięcie"/>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                </StackLayout>
+            </xct:Expander>
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Resources/drawable/arrow.png" Rotation="{Binding Rotation}"/>
+                        <Label Text="Skóra"
+                               FontAttributes="Bold"
+                               FontSize="Medium" />
+                    </StackLayout>
+                </xct:Expander.Header>
+                <StackLayout>
+                    <TableView>
+                        <TableRoot>
+                            <TableSection Title="Wygląd">
+                                <SwitchCell Text="Blada"/>
+                                <SwitchCell Text="Rumień"/>
+                                <SwitchCell Text="Zażółcenie"/>
+                                <SwitchCell Text="Sinica Centr."/>
+                                <SwitchCell Text="Sinica Obw."/>
+                            </TableSection>
+                            <TableSection Title="Wilgotność">
+                                <SwitchCell Text="W normie"/>
+                                <SwitchCell Text="Wilgotna"/>
+                                <SwitchCell Text="Sucha"/>
+                            </TableSection>
+                            <TableSection Title="Temperatura">
+                                <SwitchCell Text="W normie"/>
+                                <SwitchCell Text="Chłodna"/>
+                                <SwitchCell Text="Ciepła"/>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                </StackLayout>
+            </xct:Expander>
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Resources/drawable/arrow.png" Rotation="{Binding Rotation}"/>
+                        <Label Text="Ocena psyho-ruchowa"
+                               FontAttributes="Bold"
+                               FontSize="Medium" />
+                    </StackLayout>
+                </xct:Expander.Header>
+                <StackLayout>
+                    <TableView>
+                        <TableRoot>
+                            <TableSection>
+                                <SwitchCell Text="W normie"/>
+                                <SwitchCell Text="Spowolniały"/>
+                                <SwitchCell Text="Pobudzony"/>
+                                <SwitchCell Text="Agresywny"/>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                </StackLayout>
+            </xct:Expander>
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Resources/drawable/arrow.png" Rotation="{Binding Rotation}"/>
+                        <Label Text="Zapach z ust"
+                               FontAttributes="Bold"
+                               FontSize="Medium" />
+                    </StackLayout>
+                </xct:Expander.Header>
+                <StackLayout>
+                    <TableView>
+                        <TableRoot>
+                            <TableSection>
+                                <SwitchCell Text="Rozpuszczalnik organiczny"/>
+                                <SwitchCell Text="Alkohol"/>
+                                <EntryCell Label="Inne:"/>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                </StackLayout>
+            </xct:Expander>
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Resources/drawable/arrow.png" Rotation="{Binding Rotation}"/>
+                        <Label Text="Niedowład/porażenie"
+                               FontAttributes="Bold"
+                               FontSize="Medium" />
+                    </StackLayout>
+                </xct:Expander.Header>
+                <StackLayout>
+                    <TableView>
+                        <TableRoot>
+                            <TableSection>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal">
+                                        <StackLayout VerticalOptions="CenterAndExpand">
+                                            <Label Text="Koń. górna"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                            <StackLayout VerticalOptions="CenterAndExpand">
+                                                <Label Text="L"/>
+                                            </StackLayout>
+                                            <StackLayout VerticalOptions="CenterAndExpand" Margin="0, 0, 15, 0">
+                                                <CheckBox/>
+                                            </StackLayout>
+                                            <StackLayout VerticalOptions="CenterAndExpand">
+                                                <Label Text="P"/>
+                                            </StackLayout>
+                                            <StackLayout VerticalOptions="CenterAndExpand" Margin="0, 0, 15, 0">
+                                                <CheckBox/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal">
+                                        <StackLayout VerticalOptions="CenterAndExpand">
+                                            <Label Text="Koń. dolna"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                            <StackLayout VerticalOptions="CenterAndExpand">
+                                                <Label Text="L"/>
+                                            </StackLayout>
+                                            <StackLayout VerticalOptions="CenterAndExpand" Margin="0, 0, 15, 0">
+                                                <CheckBox/>
+                                            </StackLayout>
+                                            <StackLayout VerticalOptions="CenterAndExpand">
+                                                <Label Text="P"/>
+                                            </StackLayout>
+                                            <StackLayout VerticalOptions="CenterAndExpand" Margin="0, 0, 15, 0">
+                                                <CheckBox/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                </StackLayout>
+            </xct:Expander>
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Resources/drawable/arrow.png" Rotation="{Binding Rotation}"/>
+                        <Label Text="Inne"
+                               FontAttributes="Bold"
+                               FontSize="Medium" />
+                    </StackLayout>
+                </xct:Expander.Header>
+                <StackLayout>
+                    <TableView>
+                        <TableRoot>
+                            <TableSection>
+                                <SwitchCell Text="Ciąża"/>
+                                <SwitchCell Text="Poród"/>
+                                <SwitchCell Text="Chor. zakaźna"/>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                </StackLayout>
+            </xct:Expander>
+
+            <Button Text="Obrażenia" Command="{Binding InjuriesCommand}"/>
+
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Resources/drawable/arrow.png" Rotation="{Binding Rotation}"/>
+                        <Label Text="Wywiad"
+                               FontAttributes="Bold"
+                               FontSize="Medium" />
+                    </StackLayout>
+                </xct:Expander.Header>
+                <Editor Placeholder="Wpisz tutaj...."/>
+            </xct:Expander>
+
+            <xct:Expander>
+                <xct:Expander.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Resources/drawable/arrow.png" Rotation="{Binding Rotation}"/>
+                        <Label Text="Opis"
+                               FontAttributes="Bold"
+                               FontSize="Medium" />
+                    </StackLayout>
+                </xct:Expander.Header>
+                <Editor Placeholder="Wpisz tutaj...."/>
+            </xct:Expander>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
